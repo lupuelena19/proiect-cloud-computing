@@ -1,0 +1,70 @@
+body {
+    background-color: #f5ede4;
+}
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, serif;
+    
+}
+
+
+
+.butoane {
+    display: flex;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+button {
+    height: 40px;;
+    width: 120px;
+    font-family: Georgia, serif;
+}
+
+.lista-evenimente {
+    display: flex;
+    /* justify-content: center; */
+    background-color: #f2e0cb;
+    width: 900px;
+
+}
+
+li {
+    margin-bottom: 20px;
+    list-style-type: none;
+}
+
+.bilet {
+    font-size:20px;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    background-color: antiquewhite;
+    padding-left: 30px;
+    border: 2px solid #b8a086;
+    border-radius: 5%;
+}
+
+.container-adaugare {
+    width: 700px;
+}
+
+.input-label {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    height: 30px;
+}
+
+p {
+    margin-bottom: 1px;
+}
+
+.lista-goala {
+    padding-left: 30px;
+}

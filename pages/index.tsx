@@ -1,3 +1,4 @@
+// import "./style.css";
 import { useState, FormEvent, useEffect } from "react";
 import clientPromise from "../lib/mongodb";
 import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
@@ -121,21 +122,26 @@ export default function Home({ isConnected }: InferGetServerSidePropsType<typeof
       setError("A apărut o eroare la ștergerea proiectelor.");
     }
   };
+
+  const toggleAddEventModal = () => {
+    setShowAddEventModal(prevState => !prevState);
+  };
+
   return (
     <div className="page">
       <div className="titlu">
-        <h1>Bilete evenimente</h1>
+        <h1>BILETE EVENIMENTE</h1>
       </div>
       <div className="butoane">
-        <button onClick={handleDeleteAllEvents}>Delete</button>
-        <button onClick={() => setShowAddEventModal(true)}>Add Event</button>
+        <button onClick={handleDeleteAllEvents}>Sterge biletele</button>
+        <button onClick={toggleAddEventModal}>Adauga bilet</button>
       </div>
       <div className="container-adaugare">
       {showAddEventModal && (
         <div>
           <form onSubmit={handleAddEvent} >
                {error && <p >{error}</p>}
-               <div>
+               <div className="input-label">
                  <label htmlFor="numeEv">Nume Eveniment:</label>
                  <input
                   type="text"
@@ -144,7 +150,7 @@ export default function Home({ isConnected }: InferGetServerSidePropsType<typeof
                   onChange={(e) => setNumeEv(e.target.value)}
                 />
               </div>
-              <div>
+              <div className="input-label">
                 <label htmlFor="dataEv">Data Eveniment:</label>
                 <input
                   type="date"
@@ -153,7 +159,7 @@ export default function Home({ isConnected }: InferGetServerSidePropsType<typeof
                   onChange={(e) => setDataEv(e.target.value)}
                   />
               </div>
-              <div>
+              <div className="input-label">
                 <label htmlFor="locatie">Locație:</label>
                 <input
                   type="text"
@@ -163,7 +169,7 @@ export default function Home({ isConnected }: InferGetServerSidePropsType<typeof
                   
                 />
               </div>
-              <div >
+              <div  className="input-label">
                 <label htmlFor="durata">Durata:</label>
                 <input
                   type="number"
@@ -173,9 +179,10 @@ export default function Home({ isConnected }: InferGetServerSidePropsType<typeof
                   
                 />
               </div>
-              <div>
+              <div className="input-label">
                 <label htmlFor="descriere">Descriere:</label>
                 <input
+                  style={{height: "90px"}}
                   type="text"
                   id="descriere"
                   value={_descriere}
@@ -195,15 +202,17 @@ export default function Home({ isConnected }: InferGetServerSidePropsType<typeof
 
       </div>
       <div className="lista-evenimente">
+        {evenimente.length === 0 && <p className="lista-goala">Nu exista niciun bilet!</p>}
       <ul>
         {evenimente.map(event => (
           <li key={event._id}>
-            <div>
+            <div className="bilet">
               <h2>{event.nume_ev}</h2>
               <p>Date: {event.data_ev}</p>
               <p>Location: {event.locatie}</p>
               <p>Duration: {event.durata}</p>
               <p>Description: {event.descriere}</p>
+              <hr></hr>
             </div>
           </li>
         ))}
