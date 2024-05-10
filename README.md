@@ -3,7 +3,7 @@ Nume: Lupu
 Prenume: Elena
 Grupa: 1132
 Link aplicatie:  proiect-cloud-computing-six.vercel.app
-Link video: 
+Link video: https://youtu.be/WeL4wHRxgdI
 
 1. Introducere
 Această aplicație cloud se concentrează pe implementarea unui sistem de gestionare a biletelor pentru mai multe evenimente și utilizează tehnologii precum Next.js și MongoDB Compass. 
