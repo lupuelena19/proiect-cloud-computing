@@ -12,7 +12,7 @@ export default async function handler(req, res) {
       return res.status(200).json(projects);
     } catch (error) {
       console.error("Eroare la obtinerea biletelor:", error);
-      return res.status(500).json({ message: "Biletele nu au ptut fi obtinute." });
+      return res.status(500).json({ message: "Biletele nu au putut fi obtinute." });
     }
   }
 

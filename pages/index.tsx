@@ -98,7 +98,7 @@ export default function Home({ isConnected }: InferGetServerSidePropsType<typeof
       }
     } catch (error) {
       console.error("Eroare la adaugare:", error);
-      setError("Exista o eroare la adaugarea biletului.");
+      setError("Eroare la adaugarea biletului.");
     }
   };
 
@@ -111,15 +111,15 @@ export default function Home({ isConnected }: InferGetServerSidePropsType<typeof
 
       if (response.ok) {
         setError("");
-        setEvenimente([]); // Șterge toate proiectele din starea locală
-        alert("Toate proiectele au fost șterse cu succes!");
+        setEvenimente([]); 
+        alert("Toate biletele au fost sterse cu succes!");
       } else {
         const data = await response.json();
         setError(data.message);
       }
     } catch (error) {
-      console.error("Eroare la ștergerea proiectelor:", error);
-      setError("A apărut o eroare la ștergerea proiectelor.");
+      console.error("Eroare la stergerea biletelor:", error);
+      setError("Eroare la stergerea biletelor.");
     }
   };
 

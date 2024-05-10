@@ -14,8 +14,8 @@ export default async function handler(req, res) {
 
     res.status(200).json({ message: "Biletele au fost sterse!" });
   } catch (error) {
-    console.error("Eroare la ștergerea tuturor proiectelor:", error);
-    res.status(500).json({ message: "Exista o eroare la stergerea biletelor." });
+    console.error("Eroare la stergerea biletelor:", error);
+    res.status(500).json({ message: "Eroare la stergerea biletelor." });
   }
 }
 

@@ -11,10 +11,10 @@ export default async function handler(req, res) {
 
     await projectsCollection.insertOne({ nume_ev, data_ev, locatie, durata, descriere });
 
-    return res.status(200).json({ message: "Biletul evenimentului a fost introdus cu succes!" });
+    return res.status(200).json({ message: "Biletul a fost introdus cu succes!" });
   } catch (error) {
     console.error("Eroare la adaugare:", error);
-    return res.status(500).json({ message: "Exista o eroare la adaugarea biletului." });
+    return res.status(500).json({ message: "Eroare la adaugarea biletului." });
   }
 }
 
